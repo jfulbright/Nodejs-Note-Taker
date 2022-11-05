@@ -43,11 +43,13 @@ const saveNote = (note) =>
   });
 
 const deleteNote = (id) =>
+
   fetch(`/api/notes/${id}`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
     },
+   
   });
 
 const renderActiveNote = () => {
@@ -80,6 +82,7 @@ const handleNoteSave = () => {
 // Delete the clicked note
 const handleNoteDelete = (e) => {
   // Prevents the click listener for the list from being called when the button inside of it is clicked
+
   e.stopPropagation();
 
   const note = e.target;
@@ -88,7 +91,7 @@ const handleNoteDelete = (e) => {
   if (activeNote.id === noteId) {
     activeNote = {};
   }
-
+  console.log(`handleNoteDelete function called ${noteId}`);
   deleteNote(noteId).then(() => {
     getAndRenderNotes();
     renderActiveNote();
