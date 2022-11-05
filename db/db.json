@@ -1,6 +1,12 @@
 [
     {
-        "title":"Test Title",
-        "text":"Test text"
+        "title": "My First Note",
+        "text": "This Project is complete",
+        "id": "99b23915-b895-4ea6-8ec1-b6cae4779eb0"
+    },
+    {
+        "title": "Delete This Note",
+        "text": "Delete",
+        "id": "7b2751f3-54b7-46ff-a8d4-d46c0946c2ab"
     }
 ]
