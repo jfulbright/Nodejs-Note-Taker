@@ -5,6 +5,6 @@ const router = require('express').Router()
 const notesRouter = require('./notes'); 
 
 // express method to include routes.js when user on /notes website path
-router.use('/api', notesRouter);
+router.use('/api/notes', notesRouter);
 
 module.exports = router;
