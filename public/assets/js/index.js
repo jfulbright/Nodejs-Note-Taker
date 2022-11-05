@@ -52,6 +52,7 @@ const deleteNote = (id) =>
    
   });
 
+//passes activeNote object as argument and if there's an ID, renders values in title and text html elements
 const renderActiveNote = () => {
   hide(saveNoteBtn);
 
@@ -87,12 +88,12 @@ const handleNoteDelete = (e) => {
 
   const note = e.target;
   // store uuid from html selector so it can be deleted
-  const noteId = JSON.parse(note.parentElement.getAttribute('data-note')).note_id;
+  const noteId = JSON.parse(note.parentElement.getAttribute('data-note')).id;
 
   if (activeNote.id === noteId) {
     activeNote = {};
   }
-  console.log(`handleNoteDelete function called ${noteId}`);
+ 
   deleteNote(noteId).then(() => {
     getAndRenderNotes();
     renderActiveNote();
@@ -102,8 +103,8 @@ const handleNoteDelete = (e) => {
 // Sets the activeNote and displays it
 const handleNoteView = (e) => {
   e.preventDefault();
-  activeNote = JSON.parse(e.target.parentElement.getAttribute('data-note'));
-  console.log(activeNote)
+  activeNote = JSON.parse(e.target.parentElement.getAttribute('data-note')); //Stores attributes in data-note as elemnts in the object activeNote
+  console.log(`handleNoteView function called ${activeNote.id}`)
   renderActiveNote();
 };
 
