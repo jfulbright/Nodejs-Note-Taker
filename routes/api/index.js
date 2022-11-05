@@ -5,6 +5,6 @@ const router = require('express').Router();
 const notesRouter = require('./notes'); 
 
 //express function to fire callback on calls to the /api/notes endpoint
-router.use('/api/notes', notesRouter);
+router.use('/api', notesRouter);
 
 module.exports = router;
