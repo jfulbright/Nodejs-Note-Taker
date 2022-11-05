@@ -25,6 +25,9 @@ notes.get('/:id', (req, res) => {
 });
 
 // DELETE Route for a specific note
+/// 1. find note by id
+/// 2. filter out note from noteID array
+/// 3. save noteID array array to json file database 
 notes.delete('/:id', (req, res) => {
   const noteId = req.params.id;
   readFromFile('./db/db.json')
