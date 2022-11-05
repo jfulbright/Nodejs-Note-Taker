@@ -1,10 +1,10 @@
-const express = require('express');
-
 // Import modular routers for /notes
-const notesRouter = require('./notes');
+const router = require('express').Router()
 
-const app = express();
+//declare var and store path to notes.js routes
+const notesRouter = require('./notes'); 
 
-app.use('/notes', notesRouter);
+// express method to include routes.js when user on /notes website path
+router.use('/notes', notesRouter);
 
-module.exports = app;
+module.exports = router;
