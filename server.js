@@ -3,7 +3,7 @@
 const express = require('express');
 const path = require('path');
 // require notes route file
-const routes = require('./routes'); //declare variable and store path to routes directory
+const routes = require('./routes/api'); //declare variable and store path to routes directory
 // const api = require('./routes/api/notes');
 
 
