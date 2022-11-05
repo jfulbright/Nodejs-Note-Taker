@@ -1,4 +1,7 @@
+// Express setup
 const notes = require('express').Router();
+
+// import dependencies
 const { v4: uuidv4 } = require('uuid');
 const {
   readFromFile,
@@ -7,12 +10,13 @@ const {
 } = require('../../helpers/fsUtils');
 
 // GET Route for retrieving all the notes
-notes.get('/', (req, res) => {
+notes.get('/api/notes', (req, res) => {
   readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)));
 });
 
+
 // GET Route for a specific note
-notes.get('/:id', (req, res) => {
+notes.get('/api/notes/:id', (req, res) => {
   const noteId = req.params.id;
   readFromFile('./db/db.json')
     .then((data) => JSON.parse(data))
@@ -25,7 +29,10 @@ notes.get('/:id', (req, res) => {
 });
 
 // DELETE Route for a specific note
-notes.delete('/:id', (req, res) => {
+/// 1. find note by id
+/// 2. filter out note from noteID array
+/// 3. save noteID array array to json file database 
+notes.delete('/api/notes/:id', (req, res) => {
   const noteId = req.params.id;
   readFromFile('./db/db.json')
     .then((data) => JSON.parse(data))
@@ -42,7 +49,7 @@ notes.delete('/:id', (req, res) => {
 });
 
 // POST Route for a new note
-notes.post('/', (req, res) => {
+notes.post('/api/notes', (req, res) => {
   console.log(req.body);
 
   const { title, text} = req.body; 
@@ -60,5 +67,7 @@ notes.post('/', (req, res) => {
     res.error('Error in adding note');
   }
 });
+
+console.log("notes.js imported")
 
 module.exports = notes;

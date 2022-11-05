@@ -1,10 +1,10 @@
-const express = require('express');
+// Express setup
+const router = require('express').Router();
 
-// Import our modular routers for /tips and /feedback
-const notesRouter = require('./notes');
+//callback function to import /notes.js
+const notesRouter = require('./notes.js'); 
 
-const app = express();
+//express function to fire callback function
+router.use(notesRouter);
 
-app.use('/notes', notesRouter);
-
-module.exports = app;
+module.exports = router;
