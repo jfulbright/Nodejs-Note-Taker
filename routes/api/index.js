@@ -1,10 +1,10 @@
-// Import modular routers for /notes
-const router = require('express').Router()
+// Express setup
+const router = require('express').Router();
 
-//declare var and store path to notes.js routes
+//callback function to import /notes.js
 const notesRouter = require('./notes'); 
 
-// express method to include routes.js when user on /notes website path
+//express function to fire callback on calls to the /api/notes endpoint
 router.use('/api/notes', notesRouter);
 
 module.exports = router;

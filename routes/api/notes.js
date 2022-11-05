@@ -1,4 +1,7 @@
+// Express setup
 const notes = require('express').Router();
+
+// import dependencies
 const { v4: uuidv4 } = require('uuid');
 const {
   readFromFile,

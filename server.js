@@ -3,8 +3,7 @@
 const express = require('express');
 const path = require('path');
 // require notes route file
-const routes = require('./routes/api'); //declare variable and store path to routes directory
-// const api = require('./routes/api/notes');
+const routes = require('./routes/api'); //callback function that includes directory.js routes
 
 
 
@@ -25,8 +24,9 @@ app.use(express.urlencoded({ extended: true }));
 
 // GET, POST, DELETE API Endpoints.
 //===============================================================================
-  //express method to turn on routes and import routes defined in ./routes
-  app.use(routes);
+  //express function to route calls to the `/api/notes` endpoint to `routes/api/index` 
+  // api calls to `/api/notes' fires 'routes' callback funtion, which includes /routes directory 
+  app.use('/api/notes', routes);
   // app.use('/api', api); 
 
 
