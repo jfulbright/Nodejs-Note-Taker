@@ -3,6 +3,10 @@
 
 ## Description:
 This Note Taker applicaiton can be used to write and save notes. This application uses an Express.js back end and Node Routing with API endpoints to save and retrieve note data from a JSON file.
+
+## Deployed App:
+ [App deployed to Heroku:](https://vast-plains-36846.herokuapp.com/)
+
 ## UI/UX Screenshot:
 ![Note Taker Screenshot](./Assets/Nodejs-NoteTaker-ScreenShot.png "Note Taker Screenshot")
 
