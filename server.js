@@ -14,8 +14,9 @@ const app = express();
 // Middleware for parsing JSON and urlencoded form data
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
 // route api calls to routes folder
-app.use('/api', api); 
+app.use('routes/api', api); 
 
 app.use(express.static('public'));
 
